@@ -2,9 +2,19 @@
 {% for task in tasks %}
 
 <div>
-    <h1>{{task.title}}</h1>
+    <!-- Comentario que si se va a ver en HTML -->
+    {# nota: esta es una tarea #}
+    <h1>{% if task.done == False %}⌛{% else %}✅{% endif %} {{task.title}}</h1>
+
     <p>{{task.description}}</p>
     <p>Project: {{task.project.name}}</p>
+
+    <button>
+        Delete
+    </button>
+    <button>
+        Done ✅
+    </button>
 </div>
 
 {% endfor %}
