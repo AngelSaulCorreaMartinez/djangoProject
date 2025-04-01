@@ -1,0 +1,14 @@
+{%extends 'layouts/base.html'%}
+
+{% block content %}
+<h1>Create a new task</h1>
+<form method="POST">
+    {% csrf_token %} {# necesario por seguridad #}
+    {{form.as_p}} {# Se envian como <p> y no como <div> #}
+    <button>
+        Save
+    </button>
+
+</form>
+
+{% endblock %}
