@@ -1,22 +1,22 @@
 <nav>
     <ul>
         <li>
-            <a href="/">Home</a>
+            <a href="{% url 'index' %}">Home</a>
         </li>
         <li>
-            <a href="/projects">Projects</a>
+            <a href="{% url 'projects' %}">Projects</a>
         </li>
         <li>
-            <a href="/task">Task</a>
+            <a href="{% url 'task' %}">Task</a>
         </li>
         <li>
-            <a href="/about">about</a>
+            <a href="{% url 'about' %}">about</a>
         </li>
         <li>
-            <a href="/create_task">Create task</a>
+            <a href="{% url 'create_task' %}">Create task</a>
         </li>
         <li>
-            <a href="/create_project">Create project</a>
+            <a href="{% url 'create_project' %}">Create project</a>
         </li>
     </ul>
 </nav>
