@@ -1,6 +1,11 @@
 {% extends 'layouts/base.html' %}
 
+{% load static %}
+
 {% block content%}
 <h1>{{ title }}</h1>
+
+<img src="{% static 'chill.gif' %}" alt="" width="500">
+
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, assumenda atque dolores, veniam corporis enim iusto reprehenderit laborum aliquam sunt sequi, officia ducimus reiciendis. Aut ut quas accusantium ducimus quia!</p>
 {% endblock %}
