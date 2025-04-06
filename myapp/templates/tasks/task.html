@@ -1,11 +1,12 @@
-{% extends 'layouts/base2.html' %}
+{% extends 'layouts/base.html' %}
+{#{% extends 'layouts/base2.html' %}#}
 
 {% block content %}
 
 <h1>Task</h1>
 {% for task in tasks %}
 
-<div>
+<div class="card">
     <!-- Comentario que si se va a ver en HTML -->
     {# nota: esta es una tarea #}
     <h1>{% if task.done == False %}⌛{% else %}✅{% endif %} {{task.title}}</h1>
