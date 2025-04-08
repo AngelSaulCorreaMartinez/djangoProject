@@ -41,6 +41,12 @@ def task(request):
         'tasks': tasks
     })
 
+def task_done_status(request, id):
+    if request.method == 'POST':
+         task = get_object_or_404(Task, id=id)
+         task.done = not task.done
+         task.save()
+         return redirect('task')
 
 def create_task(request):
     if request.method == 'GET':
@@ -51,6 +57,12 @@ def create_task(request):
     else:
         Task.objects.create(
             title=request.POST['title'], description=request.POST['description'], project_id=2)
+        return redirect('task')
+    
+def delete_task(request, id):
+    if request.method == 'POST':
+        task = get_object_or_404(Task, id=id)
+        task.delete()
         return redirect('task')
 
 

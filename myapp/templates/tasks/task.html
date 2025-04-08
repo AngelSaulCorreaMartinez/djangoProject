@@ -14,12 +14,24 @@
     <p>{{task.description}}</p>
     <p>Project: {{task.project.name}}</p>
 
-    <button>
-        Delete
-    </button>
-    <button>
-        Done ✅
-    </button>
+    <form method="POST" action="{% url 'delete_task' task.id %}">
+        {% csrf_token %}
+        <button>
+            Delete
+        </button>
+    </form>
+    <form method="POST" action="{% url 'task_done_status' task.id %}">
+        {% csrf_token %}
+        {% if task.done == True %}
+        <button>
+            Undo ✖️
+        </button>
+        {% else %}
+        <button>
+            Done ✅
+        </button>
+        {% endif %}
+    </form>
 </div>
 
 {% endfor %}
